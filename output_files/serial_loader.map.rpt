@@ -1,0 +1,723 @@
+Analysis & Synthesis report for serial_loader
+Fri Apr 21 21:42:46 2017
+Quartus II 64-Bit Version 15.0.0 Build 145 04/22/2015 Patches 0.01we SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Analysis & Synthesis RAM Summary
+  9. Analysis & Synthesis IP Cores Summary
+ 10. General Register Statistics
+ 11. Inverted Register Statistics
+ 12. Registers Packed Into Inferred Megafunctions
+ 13. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 14. Source assignments for loader0:u0|altera_serial_flash_loader:serial_flash_loader_0|altserial_flash_loader:altserial_flash_loader_component|alt_sfl_enhanced:\ENHANCED_PGM:sfl_inst_enhanced|lpm_shiftreg:crc_shifter|altshift_taps:dffs_rtl_0|shift_taps_jpq:auto_generated|altsyncram_mbb1:altsyncram2
+ 15. Source assignments for loader0:u0|altera_serial_flash_loader:serial_flash_loader_0|altserial_flash_loader:altserial_flash_loader_component|alt_sfl_enhanced:\ENHANCED_PGM:sfl_inst_enhanced|lpm_shiftreg:data_speed_reg|altshift_taps:dffs_rtl_0|shift_taps_9pq:auto_generated|altsyncram_0bb1:altsyncram2
+ 16. Source assignments for loader0:u0|altera_serial_flash_loader:serial_flash_loader_0|altserial_flash_loader:altserial_flash_loader_component|alt_sfl_enhanced:\ENHANCED_PGM:sfl_inst_enhanced|lpm_shiftreg:data_reg|altshift_taps:dffs_rtl_0|shift_taps_hpq:auto_generated|altsyncram_gbb1:altsyncram2
+ 17. Parameter Settings for User Entity Instance: loader0:u0|altera_serial_flash_loader:serial_flash_loader_0
+ 18. Parameter Settings for User Entity Instance: loader0:u0|altera_serial_flash_loader:serial_flash_loader_0|altserial_flash_loader:altserial_flash_loader_component
+ 19. Parameter Settings for Inferred Entity Instance: loader0:u0|altera_serial_flash_loader:serial_flash_loader_0|altserial_flash_loader:altserial_flash_loader_component|alt_sfl_enhanced:\ENHANCED_PGM:sfl_inst_enhanced|lpm_shiftreg:crc_shifter|altshift_taps:dffs_rtl_0
+ 20. Parameter Settings for Inferred Entity Instance: loader0:u0|altera_serial_flash_loader:serial_flash_loader_0|altserial_flash_loader:altserial_flash_loader_component|alt_sfl_enhanced:\ENHANCED_PGM:sfl_inst_enhanced|lpm_shiftreg:data_speed_reg|altshift_taps:dffs_rtl_0
+ 21. Parameter Settings for Inferred Entity Instance: loader0:u0|altera_serial_flash_loader:serial_flash_loader_0|altserial_flash_loader:altserial_flash_loader_component|alt_sfl_enhanced:\ENHANCED_PGM:sfl_inst_enhanced|lpm_shiftreg:data_reg|altshift_taps:dffs_rtl_0
+ 22. altshift_taps Parameter Settings by Entity Instance
+ 23. Port Connectivity Checks: "loader0:u0|altera_serial_flash_loader:serial_flash_loader_0"
+ 24. Port Connectivity Checks: "loader0:u0"
+ 25. Post-Synthesis Netlist Statistics for Top Partition
+ 26. Elapsed Time Per Partition
+ 27. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2015 Altera Corporation. All rights reserved.
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, the Altera Quartus II License Agreement,
+the Altera MegaCore Function License Agreement, or other 
+applicable license agreement, including, without limitation, 
+that your use is for the sole purpose of programming logic 
+devices manufactured by Altera and sold by Altera or its 
+authorized distributors.  Please refer to the applicable 
+agreement for further details.
+
+
+
++------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                                   ;
++------------------------------------+-----------------------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Fri Apr 21 21:42:46 2017                     ;
+; Quartus II 64-Bit Version          ; 15.0.0 Build 145 04/22/2015 Patches 0.01we SJ Web Edition ;
+; Revision Name                      ; serial_loader                                             ;
+; Top-level Entity Name              ; serial_loader                                             ;
+; Family                             ; Cyclone IV E                                              ;
+; Total logic elements               ; 637                                                       ;
+;     Total combinational functions  ; 424                                                       ;
+;     Dedicated logic registers      ; 390                                                       ;
+; Total registers                    ; 390                                                       ;
+; Total pins                         ; 4                                                         ;
+; Total virtual pins                 ; 0                                                         ;
+; Total memory bits                  ; 12,372                                                    ;
+; Embedded Multiplier 9-bit elements ; 0                                                         ;
+; Total PLLs                         ; 0                                                         ;
++------------------------------------+-----------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; EP4CE6E22C6        ;                    ;
+; Top-level entity name                                                      ; serial_loader      ; serial_loader      ;
+; Family name                                                                ; Cyclone IV E       ; Cyclone V          ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; DSP Block Balancing                                                        ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                 ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM Block Balancing                                                   ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                    ; On                 ; On                 ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; SDC constraint protection                                                  ; Off                ; Off                ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                       ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
+; Synthesis Seed                                                             ; 1                  ; 1                  ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 2           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ; < 0.1%      ;
+;     Processors 3-4         ;   0.0%      ;
++----------------------------+-------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                                                                      ;
++--------------------------------------------------------------------+-----------------+----------------------------------------------+---------------------------------------------------------------------------------------------------------+-------------+
+; File Name with User-Entered Path                                   ; Used in Netlist ; File Type                                    ; File Name with Absolute Path                                                                            ; Library     ;
++--------------------------------------------------------------------+-----------------+----------------------------------------------+---------------------------------------------------------------------------------------------------------+-------------+
+; loader0/synthesis/loader0.v                                        ; yes             ; User Verilog HDL File                        ; C:/Users/George/Desktop/SerialLoader/loader0/synthesis/loader0.v                                        ; loader0     ;
+; loader0/synthesis/submodules/altera_serial_flash_loader.v          ; yes             ; User Verilog HDL File                        ; C:/Users/George/Desktop/SerialLoader/loader0/synthesis/submodules/altera_serial_flash_loader.v          ; loader0     ;
+; serial_loader.sv                                                   ; yes             ; User SystemVerilog HDL File                  ; C:/Users/George/Desktop/SerialLoader/serial_loader.sv                                                   ;             ;
+; altserial_flash_loader.vhd                                         ; yes             ; Megafunction                                 ; c:/altera/15.0/quartus/libraries/megafunctions/altserial_flash_loader.vhd                               ;             ;
+; alt_sfl_enhanced.v                                                 ; yes             ; Megafunction                                 ; c:/altera/15.0/quartus/libraries/megafunctions/alt_sfl_enhanced.v                                       ;             ;
+; lpm_shiftreg.tdf                                                   ; yes             ; Megafunction                                 ; c:/altera/15.0/quartus/libraries/megafunctions/lpm_shiftreg.tdf                                         ;             ;
+; lpm_constant.inc                                                   ; yes             ; Megafunction                                 ; c:/altera/15.0/quartus/libraries/megafunctions/lpm_constant.inc                                         ;             ;
+; dffeea.inc                                                         ; yes             ; Megafunction                                 ; c:/altera/15.0/quartus/libraries/megafunctions/dffeea.inc                                               ;             ;
+; aglobal150.inc                                                     ; yes             ; Megafunction                                 ; c:/altera/15.0/quartus/libraries/megafunctions/aglobal150.inc                                           ;             ;
+; lpm_counter.tdf                                                    ; yes             ; Megafunction                                 ; c:/altera/15.0/quartus/libraries/megafunctions/lpm_counter.tdf                                          ;             ;
+; lpm_decode.inc                                                     ; yes             ; Megafunction                                 ; c:/altera/15.0/quartus/libraries/megafunctions/lpm_decode.inc                                           ;             ;
+; lpm_add_sub.inc                                                    ; yes             ; Megafunction                                 ; c:/altera/15.0/quartus/libraries/megafunctions/lpm_add_sub.inc                                          ;             ;
+; cmpconst.inc                                                       ; yes             ; Megafunction                                 ; c:/altera/15.0/quartus/libraries/megafunctions/cmpconst.inc                                             ;             ;
+; lpm_compare.inc                                                    ; yes             ; Megafunction                                 ; c:/altera/15.0/quartus/libraries/megafunctions/lpm_compare.inc                                          ;             ;
+; lpm_counter.inc                                                    ; yes             ; Megafunction                                 ; c:/altera/15.0/quartus/libraries/megafunctions/lpm_counter.inc                                          ;             ;
+; alt_counter_stratix.inc                                            ; yes             ; Megafunction                                 ; c:/altera/15.0/quartus/libraries/megafunctions/alt_counter_stratix.inc                                  ;             ;
+; db/cntr_mfi.tdf                                                    ; yes             ; Auto-Generated Megafunction                  ; C:/Users/George/Desktop/SerialLoader/db/cntr_mfi.tdf                                                    ;             ;
+; sld_hub.vhd                                                        ; yes             ; Encrypted Megafunction                       ; c:/altera/15.0/quartus/libraries/megafunctions/sld_hub.vhd                                              ; altera_sld  ;
+; db/ip/sldf29756ea/alt_sld_fab.v                                    ; yes             ; Encrypted Auto-Found Verilog HDL File        ; C:/Users/George/Desktop/SerialLoader/db/ip/sldf29756ea/alt_sld_fab.v                                    ; alt_sld_fab ;
+; db/ip/sldf29756ea/submodules/alt_sld_fab_alt_sld_fab.v             ; yes             ; Encrypted Auto-Found Verilog HDL File        ; C:/Users/George/Desktop/SerialLoader/db/ip/sldf29756ea/submodules/alt_sld_fab_alt_sld_fab.v             ; alt_sld_fab ;
+; db/ip/sldf29756ea/submodules/alt_sld_fab_alt_sld_fab_ident.sv      ; yes             ; Auto-Found SystemVerilog HDL File            ; C:/Users/George/Desktop/SerialLoader/db/ip/sldf29756ea/submodules/alt_sld_fab_alt_sld_fab_ident.sv      ; alt_sld_fab ;
+; db/ip/sldf29756ea/submodules/alt_sld_fab_alt_sld_fab_presplit.sv   ; yes             ; Encrypted Auto-Found SystemVerilog HDL File  ; C:/Users/George/Desktop/SerialLoader/db/ip/sldf29756ea/submodules/alt_sld_fab_alt_sld_fab_presplit.sv   ; alt_sld_fab ;
+; db/ip/sldf29756ea/submodules/alt_sld_fab_alt_sld_fab_sldfabric.vhd ; yes             ; Encrypted Auto-Found VHDL File               ; C:/Users/George/Desktop/SerialLoader/db/ip/sldf29756ea/submodules/alt_sld_fab_alt_sld_fab_sldfabric.vhd ; alt_sld_fab ;
+; db/ip/sldf29756ea/submodules/alt_sld_fab_alt_sld_fab_splitter.sv   ; yes             ; Encrypted Auto-Found SystemVerilog HDL File  ; C:/Users/George/Desktop/SerialLoader/db/ip/sldf29756ea/submodules/alt_sld_fab_alt_sld_fab_splitter.sv   ; alt_sld_fab ;
+; sld_jtag_hub.vhd                                                   ; yes             ; Encrypted Megafunction                       ; c:/altera/15.0/quartus/libraries/megafunctions/sld_jtag_hub.vhd                                         ;             ;
+; sld_rom_sr.vhd                                                     ; yes             ; Encrypted Megafunction                       ; c:/altera/15.0/quartus/libraries/megafunctions/sld_rom_sr.vhd                                           ;             ;
+; altshift_taps.tdf                                                  ; yes             ; Megafunction                                 ; c:/altera/15.0/quartus/libraries/megafunctions/altshift_taps.tdf                                        ;             ;
+; altdpram.inc                                                       ; yes             ; Megafunction                                 ; c:/altera/15.0/quartus/libraries/megafunctions/altdpram.inc                                             ;             ;
+; db/shift_taps_jpq.tdf                                              ; yes             ; Auto-Generated Megafunction                  ; C:/Users/George/Desktop/SerialLoader/db/shift_taps_jpq.tdf                                              ;             ;
+; db/altsyncram_mbb1.tdf                                             ; yes             ; Auto-Generated Megafunction                  ; C:/Users/George/Desktop/SerialLoader/db/altsyncram_mbb1.tdf                                             ;             ;
+; db/cntr_nvf.tdf                                                    ; yes             ; Auto-Generated Megafunction                  ; C:/Users/George/Desktop/SerialLoader/db/cntr_nvf.tdf                                                    ;             ;
+; db/cmpr_aic.tdf                                                    ; yes             ; Auto-Generated Megafunction                  ; C:/Users/George/Desktop/SerialLoader/db/cmpr_aic.tdf                                                    ;             ;
+; db/cntr_dfh.tdf                                                    ; yes             ; Auto-Generated Megafunction                  ; C:/Users/George/Desktop/SerialLoader/db/cntr_dfh.tdf                                                    ;             ;
+; db/shift_taps_9pq.tdf                                              ; yes             ; Auto-Generated Megafunction                  ; C:/Users/George/Desktop/SerialLoader/db/shift_taps_9pq.tdf                                              ;             ;
+; db/altsyncram_0bb1.tdf                                             ; yes             ; Auto-Generated Megafunction                  ; C:/Users/George/Desktop/SerialLoader/db/altsyncram_0bb1.tdf                                             ;             ;
+; db/cntr_cvf.tdf                                                    ; yes             ; Auto-Generated Megafunction                  ; C:/Users/George/Desktop/SerialLoader/db/cntr_cvf.tdf                                                    ;             ;
+; db/cmpr_9ic.tdf                                                    ; yes             ; Auto-Generated Megafunction                  ; C:/Users/George/Desktop/SerialLoader/db/cmpr_9ic.tdf                                                    ;             ;
+; db/cntr_2fh.tdf                                                    ; yes             ; Auto-Generated Megafunction                  ; C:/Users/George/Desktop/SerialLoader/db/cntr_2fh.tdf                                                    ;             ;
+; db/shift_taps_hpq.tdf                                              ; yes             ; Auto-Generated Megafunction                  ; C:/Users/George/Desktop/SerialLoader/db/shift_taps_hpq.tdf                                              ;             ;
+; db/altsyncram_gbb1.tdf                                             ; yes             ; Auto-Generated Megafunction                  ; C:/Users/George/Desktop/SerialLoader/db/altsyncram_gbb1.tdf                                             ;             ;
+; db/cntr_kvf.tdf                                                    ; yes             ; Auto-Generated Megafunction                  ; C:/Users/George/Desktop/SerialLoader/db/cntr_kvf.tdf                                                    ;             ;
+; db/cntr_afh.tdf                                                    ; yes             ; Auto-Generated Megafunction                  ; C:/Users/George/Desktop/SerialLoader/db/cntr_afh.tdf                                                    ;             ;
++--------------------------------------------------------------------+-----------------+----------------------------------------------+---------------------------------------------------------------------------------------------------------+-------------+
+
+
++------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                            ;
++---------------------------------------------+--------------------------+
+; Resource                                    ; Usage                    ;
++---------------------------------------------+--------------------------+
+; Estimated Total logic elements              ; 637                      ;
+;                                             ;                          ;
+; Total combinational functions               ; 424                      ;
+; Logic element usage by number of LUT inputs ;                          ;
+;     -- 4 input functions                    ; 173                      ;
+;     -- 3 input functions                    ; 94                       ;
+;     -- <=2 input functions                  ; 157                      ;
+;                                             ;                          ;
+; Logic elements by mode                      ;                          ;
+;     -- normal mode                          ; 331                      ;
+;     -- arithmetic mode                      ; 93                       ;
+;                                             ;                          ;
+; Total registers                             ; 390                      ;
+;     -- Dedicated logic registers            ; 390                      ;
+;     -- I/O registers                        ; 0                        ;
+;                                             ;                          ;
+; I/O pins                                    ; 4                        ;
+; Total memory bits                           ; 12372                    ;
+;                                             ;                          ;
+; Embedded Multiplier 9-bit elements          ; 0                        ;
+;                                             ;                          ;
+; Maximum fan-out node                        ; altera_internal_jtag~TDO ;
+; Maximum fan-out                             ; 416                      ;
+; Total fan-out                               ; 2720                     ;
+; Average fan-out                             ; 3.26                     ;
++---------------------------------------------+--------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   ;
++-----------------------------------------------------------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node                                                                          ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                                                                                                                                                                  ; Library Name ;
++-----------------------------------------------------------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
+; |serial_loader                                                                                      ; 424 (3)           ; 390 (0)      ; 12372       ; 0            ; 0       ; 0         ; 4    ; 0            ; |serial_loader                                                                                                                                                                                                                                                                                       ; work         ;
+;    |loader0:u0|                                                                                     ; 297 (0)           ; 296 (0)      ; 12372       ; 0            ; 0       ; 0         ; 4    ; 0            ; |serial_loader|loader0:u0                                                                                                                                                                                                                                                                            ; loader0      ;
+;       |altera_serial_flash_loader:serial_flash_loader_0|                                            ; 297 (0)           ; 296 (0)      ; 12372       ; 0            ; 0       ; 0         ; 4    ; 0            ; |serial_loader|loader0:u0|altera_serial_flash_loader:serial_flash_loader_0                                                                                                                                                                                                                           ; loader0      ;
+;          |altserial_flash_loader:altserial_flash_loader_component|                                  ; 297 (0)           ; 296 (0)      ; 12372       ; 0            ; 0       ; 0         ; 4    ; 0            ; |serial_loader|loader0:u0|altera_serial_flash_loader:serial_flash_loader_0|altserial_flash_loader:altserial_flash_loader_component                                                                                                                                                                   ; work         ;
+;             |alt_sfl_enhanced:\ENHANCED_PGM:sfl_inst_enhanced|                                      ; 297 (152)         ; 296 (23)     ; 12372       ; 0            ; 0       ; 0         ; 0    ; 0            ; |serial_loader|loader0:u0|altera_serial_flash_loader:serial_flash_loader_0|altserial_flash_loader:altserial_flash_loader_component|alt_sfl_enhanced:\ENHANCED_PGM:sfl_inst_enhanced                                                                                                                  ; work         ;
+;                |lpm_counter:bit_counter|                                                            ; 12 (0)            ; 12 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |serial_loader|loader0:u0|altera_serial_flash_loader:serial_flash_loader_0|altserial_flash_loader:altserial_flash_loader_component|alt_sfl_enhanced:\ENHANCED_PGM:sfl_inst_enhanced|lpm_counter:bit_counter                                                                                          ; work         ;
+;                   |cntr_mfi:auto_generated|                                                         ; 12 (12)           ; 12 (12)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |serial_loader|loader0:u0|altera_serial_flash_loader:serial_flash_loader_0|altserial_flash_loader:altserial_flash_loader_component|alt_sfl_enhanced:\ENHANCED_PGM:sfl_inst_enhanced|lpm_counter:bit_counter|cntr_mfi:auto_generated                                                                  ; work         ;
+;                |lpm_shiftreg:aai_data_reg|                                                          ; 0 (0)             ; 24 (24)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |serial_loader|loader0:u0|altera_serial_flash_loader:serial_flash_loader_0|altserial_flash_loader:altserial_flash_loader_component|alt_sfl_enhanced:\ENHANCED_PGM:sfl_inst_enhanced|lpm_shiftreg:aai_data_reg                                                                                        ; work         ;
+;                |lpm_shiftreg:aai_write_reg|                                                         ; 0 (0)             ; 48 (48)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |serial_loader|loader0:u0|altera_serial_flash_loader:serial_flash_loader_0|altserial_flash_loader:altserial_flash_loader_component|alt_sfl_enhanced:\ENHANCED_PGM:sfl_inst_enhanced|lpm_shiftreg:aai_write_reg                                                                                       ; work         ;
+;                |lpm_shiftreg:crc_shifter|                                                           ; 47 (0)            ; 27 (0)       ; 8190        ; 0            ; 0       ; 0         ; 0    ; 0            ; |serial_loader|loader0:u0|altera_serial_flash_loader:serial_flash_loader_0|altserial_flash_loader:altserial_flash_loader_component|alt_sfl_enhanced:\ENHANCED_PGM:sfl_inst_enhanced|lpm_shiftreg:crc_shifter                                                                                         ; work         ;
+;                   |altshift_taps:dffs_rtl_0|                                                        ; 47 (0)            ; 27 (0)       ; 8190        ; 0            ; 0       ; 0         ; 0    ; 0            ; |serial_loader|loader0:u0|altera_serial_flash_loader:serial_flash_loader_0|altserial_flash_loader:altserial_flash_loader_component|alt_sfl_enhanced:\ENHANCED_PGM:sfl_inst_enhanced|lpm_shiftreg:crc_shifter|altshift_taps:dffs_rtl_0                                                                ; work         ;
+;                      |shift_taps_jpq:auto_generated|                                                ; 47 (0)            ; 27 (1)       ; 8190        ; 0            ; 0       ; 0         ; 0    ; 0            ; |serial_loader|loader0:u0|altera_serial_flash_loader:serial_flash_loader_0|altserial_flash_loader:altserial_flash_loader_component|alt_sfl_enhanced:\ENHANCED_PGM:sfl_inst_enhanced|lpm_shiftreg:crc_shifter|altshift_taps:dffs_rtl_0|shift_taps_jpq:auto_generated                                  ; work         ;
+;                         |altsyncram_mbb1:altsyncram2|                                               ; 0 (0)             ; 0 (0)        ; 8190        ; 0            ; 0       ; 0         ; 0    ; 0            ; |serial_loader|loader0:u0|altera_serial_flash_loader:serial_flash_loader_0|altserial_flash_loader:altserial_flash_loader_component|alt_sfl_enhanced:\ENHANCED_PGM:sfl_inst_enhanced|lpm_shiftreg:crc_shifter|altshift_taps:dffs_rtl_0|shift_taps_jpq:auto_generated|altsyncram_mbb1:altsyncram2      ; work         ;
+;                         |cntr_dfh:cntr3|                                                            ; 15 (15)           ; 13 (13)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |serial_loader|loader0:u0|altera_serial_flash_loader:serial_flash_loader_0|altserial_flash_loader:altserial_flash_loader_component|alt_sfl_enhanced:\ENHANCED_PGM:sfl_inst_enhanced|lpm_shiftreg:crc_shifter|altshift_taps:dffs_rtl_0|shift_taps_jpq:auto_generated|cntr_dfh:cntr3                   ; work         ;
+;                         |cntr_nvf:cntr1|                                                            ; 32 (28)           ; 13 (13)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |serial_loader|loader0:u0|altera_serial_flash_loader:serial_flash_loader_0|altserial_flash_loader:altserial_flash_loader_component|alt_sfl_enhanced:\ENHANCED_PGM:sfl_inst_enhanced|lpm_shiftreg:crc_shifter|altshift_taps:dffs_rtl_0|shift_taps_jpq:auto_generated|cntr_nvf:cntr1                   ; work         ;
+;                            |cmpr_aic:cmpr6|                                                         ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |serial_loader|loader0:u0|altera_serial_flash_loader:serial_flash_loader_0|altserial_flash_loader:altserial_flash_loader_component|alt_sfl_enhanced:\ENHANCED_PGM:sfl_inst_enhanced|lpm_shiftreg:crc_shifter|altshift_taps:dffs_rtl_0|shift_taps_jpq:auto_generated|cntr_nvf:cntr1|cmpr_aic:cmpr6    ; work         ;
+;                |lpm_shiftreg:data_reg|                                                              ; 43 (0)            ; 26 (1)       ; 2077        ; 0            ; 0       ; 0         ; 0    ; 0            ; |serial_loader|loader0:u0|altera_serial_flash_loader:serial_flash_loader_0|altserial_flash_loader:altserial_flash_loader_component|alt_sfl_enhanced:\ENHANCED_PGM:sfl_inst_enhanced|lpm_shiftreg:data_reg                                                                                            ; work         ;
+;                   |altshift_taps:dffs_rtl_0|                                                        ; 43 (0)            ; 25 (0)       ; 2077        ; 0            ; 0       ; 0         ; 0    ; 0            ; |serial_loader|loader0:u0|altera_serial_flash_loader:serial_flash_loader_0|altserial_flash_loader:altserial_flash_loader_component|alt_sfl_enhanced:\ENHANCED_PGM:sfl_inst_enhanced|lpm_shiftreg:data_reg|altshift_taps:dffs_rtl_0                                                                   ; work         ;
+;                      |shift_taps_hpq:auto_generated|                                                ; 43 (0)            ; 25 (1)       ; 2077        ; 0            ; 0       ; 0         ; 0    ; 0            ; |serial_loader|loader0:u0|altera_serial_flash_loader:serial_flash_loader_0|altserial_flash_loader:altserial_flash_loader_component|alt_sfl_enhanced:\ENHANCED_PGM:sfl_inst_enhanced|lpm_shiftreg:data_reg|altshift_taps:dffs_rtl_0|shift_taps_hpq:auto_generated                                     ; work         ;
+;                         |altsyncram_gbb1:altsyncram2|                                               ; 0 (0)             ; 0 (0)        ; 2077        ; 0            ; 0       ; 0         ; 0    ; 0            ; |serial_loader|loader0:u0|altera_serial_flash_loader:serial_flash_loader_0|altserial_flash_loader:altserial_flash_loader_component|alt_sfl_enhanced:\ENHANCED_PGM:sfl_inst_enhanced|lpm_shiftreg:data_reg|altshift_taps:dffs_rtl_0|shift_taps_hpq:auto_generated|altsyncram_gbb1:altsyncram2         ; work         ;
+;                         |cntr_afh:cntr3|                                                            ; 14 (14)           ; 12 (12)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |serial_loader|loader0:u0|altera_serial_flash_loader:serial_flash_loader_0|altserial_flash_loader:altserial_flash_loader_component|alt_sfl_enhanced:\ENHANCED_PGM:sfl_inst_enhanced|lpm_shiftreg:data_reg|altshift_taps:dffs_rtl_0|shift_taps_hpq:auto_generated|cntr_afh:cntr3                      ; work         ;
+;                         |cntr_kvf:cntr1|                                                            ; 29 (25)           ; 12 (12)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |serial_loader|loader0:u0|altera_serial_flash_loader:serial_flash_loader_0|altserial_flash_loader:altserial_flash_loader_component|alt_sfl_enhanced:\ENHANCED_PGM:sfl_inst_enhanced|lpm_shiftreg:data_reg|altshift_taps:dffs_rtl_0|shift_taps_hpq:auto_generated|cntr_kvf:cntr1                      ; work         ;
+;                            |cmpr_9ic:cmpr6|                                                         ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |serial_loader|loader0:u0|altera_serial_flash_loader:serial_flash_loader_0|altserial_flash_loader:altserial_flash_loader_component|alt_sfl_enhanced:\ENHANCED_PGM:sfl_inst_enhanced|lpm_shiftreg:data_reg|altshift_taps:dffs_rtl_0|shift_taps_hpq:auto_generated|cntr_kvf:cntr1|cmpr_9ic:cmpr6       ; work         ;
+;                |lpm_shiftreg:data_speed_reg|                                                        ; 43 (0)            ; 26 (1)       ; 2105        ; 0            ; 0       ; 0         ; 0    ; 0            ; |serial_loader|loader0:u0|altera_serial_flash_loader:serial_flash_loader_0|altserial_flash_loader:altserial_flash_loader_component|alt_sfl_enhanced:\ENHANCED_PGM:sfl_inst_enhanced|lpm_shiftreg:data_speed_reg                                                                                      ; work         ;
+;                   |altshift_taps:dffs_rtl_0|                                                        ; 43 (0)            ; 25 (0)       ; 2105        ; 0            ; 0       ; 0         ; 0    ; 0            ; |serial_loader|loader0:u0|altera_serial_flash_loader:serial_flash_loader_0|altserial_flash_loader:altserial_flash_loader_component|alt_sfl_enhanced:\ENHANCED_PGM:sfl_inst_enhanced|lpm_shiftreg:data_speed_reg|altshift_taps:dffs_rtl_0                                                             ; work         ;
+;                      |shift_taps_9pq:auto_generated|                                                ; 43 (0)            ; 25 (1)       ; 2105        ; 0            ; 0       ; 0         ; 0    ; 0            ; |serial_loader|loader0:u0|altera_serial_flash_loader:serial_flash_loader_0|altserial_flash_loader:altserial_flash_loader_component|alt_sfl_enhanced:\ENHANCED_PGM:sfl_inst_enhanced|lpm_shiftreg:data_speed_reg|altshift_taps:dffs_rtl_0|shift_taps_9pq:auto_generated                               ; work         ;
+;                         |altsyncram_0bb1:altsyncram2|                                               ; 0 (0)             ; 0 (0)        ; 2105        ; 0            ; 0       ; 0         ; 0    ; 0            ; |serial_loader|loader0:u0|altera_serial_flash_loader:serial_flash_loader_0|altserial_flash_loader:altserial_flash_loader_component|alt_sfl_enhanced:\ENHANCED_PGM:sfl_inst_enhanced|lpm_shiftreg:data_speed_reg|altshift_taps:dffs_rtl_0|shift_taps_9pq:auto_generated|altsyncram_0bb1:altsyncram2   ; work         ;
+;                         |cntr_2fh:cntr3|                                                            ; 14 (14)           ; 12 (12)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |serial_loader|loader0:u0|altera_serial_flash_loader:serial_flash_loader_0|altserial_flash_loader:altserial_flash_loader_component|alt_sfl_enhanced:\ENHANCED_PGM:sfl_inst_enhanced|lpm_shiftreg:data_speed_reg|altshift_taps:dffs_rtl_0|shift_taps_9pq:auto_generated|cntr_2fh:cntr3                ; work         ;
+;                         |cntr_cvf:cntr1|                                                            ; 29 (25)           ; 12 (12)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |serial_loader|loader0:u0|altera_serial_flash_loader:serial_flash_loader_0|altserial_flash_loader:altserial_flash_loader_component|alt_sfl_enhanced:\ENHANCED_PGM:sfl_inst_enhanced|lpm_shiftreg:data_speed_reg|altshift_taps:dffs_rtl_0|shift_taps_9pq:auto_generated|cntr_cvf:cntr1                ; work         ;
+;                            |cmpr_9ic:cmpr6|                                                         ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |serial_loader|loader0:u0|altera_serial_flash_loader:serial_flash_loader_0|altserial_flash_loader:altserial_flash_loader_component|alt_sfl_enhanced:\ENHANCED_PGM:sfl_inst_enhanced|lpm_shiftreg:data_speed_reg|altshift_taps:dffs_rtl_0|shift_taps_9pq:auto_generated|cntr_cvf:cntr1|cmpr_9ic:cmpr6 ; work         ;
+;                |lpm_shiftreg:en4b_reg|                                                              ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |serial_loader|loader0:u0|altera_serial_flash_loader:serial_flash_loader_0|altserial_flash_loader:altserial_flash_loader_component|alt_sfl_enhanced:\ENHANCED_PGM:sfl_inst_enhanced|lpm_shiftreg:en4b_reg                                                                                            ; work         ;
+;                |lpm_shiftreg:ncso_reg|                                                              ; 0 (0)             ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |serial_loader|loader0:u0|altera_serial_flash_loader:serial_flash_loader_0|altserial_flash_loader:altserial_flash_loader_component|alt_sfl_enhanced:\ENHANCED_PGM:sfl_inst_enhanced|lpm_shiftreg:ncso_reg                                                                                            ; work         ;
+;                |lpm_shiftreg:opcode_reg|                                                            ; 0 (0)             ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |serial_loader|loader0:u0|altera_serial_flash_loader:serial_flash_loader_0|altserial_flash_loader:altserial_flash_loader_component|alt_sfl_enhanced:\ENHANCED_PGM:sfl_inst_enhanced|lpm_shiftreg:opcode_reg                                                                                          ; work         ;
+;                |lpm_shiftreg:powerful_reg|                                                          ; 0 (0)             ; 5 (5)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |serial_loader|loader0:u0|altera_serial_flash_loader:serial_flash_loader_0|altserial_flash_loader:altserial_flash_loader_component|alt_sfl_enhanced:\ENHANCED_PGM:sfl_inst_enhanced|lpm_shiftreg:powerful_reg                                                                                        ; work         ;
+;                |lpm_shiftreg:rdi_reg|                                                               ; 0 (0)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |serial_loader|loader0:u0|altera_serial_flash_loader:serial_flash_loader_0|altserial_flash_loader:altserial_flash_loader_component|alt_sfl_enhanced:\ENHANCED_PGM:sfl_inst_enhanced|lpm_shiftreg:rdi_reg                                                                                             ; work         ;
+;                |lpm_shiftreg:rsiid_reg|                                                             ; 0 (0)             ; 40 (40)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |serial_loader|loader0:u0|altera_serial_flash_loader:serial_flash_loader_0|altserial_flash_loader:altserial_flash_loader_component|alt_sfl_enhanced:\ENHANCED_PGM:sfl_inst_enhanced|lpm_shiftreg:rsiid_reg                                                                                           ; work         ;
+;                |lpm_shiftreg:rstatus_reg|                                                           ; 0 (0)             ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |serial_loader|loader0:u0|altera_serial_flash_loader:serial_flash_loader_0|altserial_flash_loader:altserial_flash_loader_component|alt_sfl_enhanced:\ENHANCED_PGM:sfl_inst_enhanced|lpm_shiftreg:rstatus_reg                                                                                         ; work         ;
+;    |sld_hub:auto_hub|                                                                               ; 124 (1)           ; 94 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |serial_loader|sld_hub:auto_hub                                                                                                                                                                                                                                                                      ; altera_sld   ;
+;       |alt_sld_fab:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:instrumentation_fabric| ; 123 (0)           ; 94 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |serial_loader|sld_hub:auto_hub|alt_sld_fab:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:instrumentation_fabric                                                                                                                                                                          ; alt_sld_fab  ;
+;          |alt_sld_fab_alt_sld_fab:alt_sld_fab|                                                      ; 123 (1)           ; 94 (5)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |serial_loader|sld_hub:auto_hub|alt_sld_fab:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab                                                                                                                                      ; alt_sld_fab  ;
+;             |alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|                                           ; 122 (0)           ; 89 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |serial_loader|sld_hub:auto_hub|alt_sld_fab:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric                                                                                          ; alt_sld_fab  ;
+;                |sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|                                       ; 122 (84)          ; 89 (61)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |serial_loader|sld_hub:auto_hub|alt_sld_fab:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub                                             ; work         ;
+;                   |sld_rom_sr:hub_info_reg|                                                         ; 20 (20)           ; 9 (9)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |serial_loader|sld_hub:auto_hub|alt_sld_fab:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|sld_rom_sr:hub_info_reg                     ; work         ;
+;                   |sld_shadow_jsm:shadow_jsm|                                                       ; 18 (18)           ; 19 (19)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |serial_loader|sld_hub:auto_hub|alt_sld_fab:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|sld_shadow_jsm:shadow_jsm                   ; altera_sld   ;
++-----------------------------------------------------------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis RAM Summary                                                                                                                                                                                                                                                                                                                                                                   ;
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+------+
+; Name                                                                                                                                                                                                                                                                                           ; Type ; Mode             ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size ; MIF  ;
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+------+
+; loader0:u0|altera_serial_flash_loader:serial_flash_loader_0|altserial_flash_loader:altserial_flash_loader_component|alt_sfl_enhanced:\ENHANCED_PGM:sfl_inst_enhanced|lpm_shiftreg:crc_shifter|altshift_taps:dffs_rtl_0|shift_taps_jpq:auto_generated|altsyncram_mbb1:altsyncram2|ALTSYNCRAM    ; AUTO ; Simple Dual Port ; 8190         ; 1            ; 8190         ; 1            ; 8190 ; None ;
+; loader0:u0|altera_serial_flash_loader:serial_flash_loader_0|altserial_flash_loader:altserial_flash_loader_component|alt_sfl_enhanced:\ENHANCED_PGM:sfl_inst_enhanced|lpm_shiftreg:data_reg|altshift_taps:dffs_rtl_0|shift_taps_hpq:auto_generated|altsyncram_gbb1:altsyncram2|ALTSYNCRAM       ; AUTO ; Simple Dual Port ; 2077         ; 1            ; 2077         ; 1            ; 2077 ; None ;
+; loader0:u0|altera_serial_flash_loader:serial_flash_loader_0|altserial_flash_loader:altserial_flash_loader_component|alt_sfl_enhanced:\ENHANCED_PGM:sfl_inst_enhanced|lpm_shiftreg:data_speed_reg|altshift_taps:dffs_rtl_0|shift_taps_9pq:auto_generated|altsyncram_0bb1:altsyncram2|ALTSYNCRAM ; AUTO ; Simple Dual Port ; 2105         ; 1            ; 2105         ; 1            ; 2105 ; None ;
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis IP Cores Summary                                                                                                                                                                                                                                                                       ;
++--------+----------------------------+---------+--------------+--------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------+
+; Vendor ; IP Core Name               ; Version ; Release Date ; License Type ; Entity Instance                                                                                                                                                                                             ; IP Include File ;
++--------+----------------------------+---------+--------------+--------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------+
+; Altera ; Signal Tap                 ; N/A     ; N/A          ; Licensed     ; |serial_loader|sld_hub:auto_hub|alt_sld_fab:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:instrumentation_fabric                                                                                 ;                 ;
+; Altera ; Signal Tap                 ; N/A     ; N/A          ; Licensed     ; |serial_loader|sld_hub:auto_hub|alt_sld_fab:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab                                             ;                 ;
+; Altera ; Signal Tap                 ; N/A     ; N/A          ; Licensed     ; |serial_loader|sld_hub:auto_hub|alt_sld_fab:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_presplit:presplit   ;                 ;
+; Altera ; Signal Tap                 ; N/A     ; N/A          ; Licensed     ; |serial_loader|sld_hub:auto_hub|alt_sld_fab:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric ;                 ;
+; Altera ; Signal Tap                 ; N/A     ; N/A          ; Licensed     ; |serial_loader|sld_hub:auto_hub|alt_sld_fab:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_splitter:splitter   ;                 ;
+; N/A    ; altera_serial_flash_loader ; 15.0    ; N/A          ; N/A          ; |serial_loader|loader0:u0                                                                                                                                                                                   ; loader0.qsys    ;
++--------+----------------------------+---------+--------------+--------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 390   ;
+; Number of registers using Synchronous Clear  ; 12    ;
+; Number of registers using Synchronous Load   ; 10    ;
+; Number of registers using Asynchronous Clear ; 256   ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 355   ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Inverted Register Statistics                                                                                                                                                                                                                                            ;
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
+; Inverted Register                                                                                                                                                                                                                                             ; Fan out ;
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
+; loader0:u0|altera_serial_flash_loader:serial_flash_loader_0|altserial_flash_loader:altserial_flash_loader_component|alt_sfl_enhanced:\ENHANCED_PGM:sfl_inst_enhanced|lpm_shiftreg:data_reg|altshift_taps:dffs_rtl_0|shift_taps_hpq:auto_generated|dffe4       ; 1       ;
+; loader0:u0|altera_serial_flash_loader:serial_flash_loader_0|altserial_flash_loader:altserial_flash_loader_component|alt_sfl_enhanced:\ENHANCED_PGM:sfl_inst_enhanced|lpm_shiftreg:crc_shifter|altshift_taps:dffs_rtl_0|shift_taps_jpq:auto_generated|dffe4    ; 1       ;
+; loader0:u0|altera_serial_flash_loader:serial_flash_loader_0|altserial_flash_loader:altserial_flash_loader_component|alt_sfl_enhanced:\ENHANCED_PGM:sfl_inst_enhanced|lpm_shiftreg:data_speed_reg|altshift_taps:dffs_rtl_0|shift_taps_9pq:auto_generated|dffe4 ; 1       ;
+; sld_hub:auto_hub|alt_sld_fab:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|tdo                 ; 1       ;
+; sld_hub:auto_hub|alt_sld_fab:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|jtag_ir_reg[2]      ; 2       ;
+; sld_hub:auto_hub|alt_sld_fab:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|jtag_ir_reg[1]      ; 3       ;
+; Total number of inverted registers = 6                                                                                                                                                                                                                        ;         ;
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Registers Packed Into Inferred Megafunctions                                                                                                                                                                                                                                                                                                                                                                                              ;
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------+
+; Register Name                                                                                                                                                                                                  ; Megafunction                                                                                                                                                                                                ; Type       ;
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------+
+; loader0:u0|altera_serial_flash_loader:serial_flash_loader_0|altserial_flash_loader:altserial_flash_loader_component|alt_sfl_enhanced:\ENHANCED_PGM:sfl_inst_enhanced|lpm_shiftreg:crc_shifter|dffs[0..8191]    ; loader0:u0|altera_serial_flash_loader:serial_flash_loader_0|altserial_flash_loader:altserial_flash_loader_component|alt_sfl_enhanced:\ENHANCED_PGM:sfl_inst_enhanced|lpm_shiftreg:crc_shifter|dffs_rtl_0    ; SHIFT_TAPS ;
+; loader0:u0|altera_serial_flash_loader:serial_flash_loader_0|altserial_flash_loader:altserial_flash_loader_component|alt_sfl_enhanced:\ENHANCED_PGM:sfl_inst_enhanced|lpm_shiftreg:data_speed_reg|dffs[0..2106] ; loader0:u0|altera_serial_flash_loader:serial_flash_loader_0|altserial_flash_loader:altserial_flash_loader_component|alt_sfl_enhanced:\ENHANCED_PGM:sfl_inst_enhanced|lpm_shiftreg:data_speed_reg|dffs_rtl_0 ; SHIFT_TAPS ;
+; loader0:u0|altera_serial_flash_loader:serial_flash_loader_0|altserial_flash_loader:altserial_flash_loader_component|alt_sfl_enhanced:\ENHANCED_PGM:sfl_inst_enhanced|lpm_shiftreg:data_reg|dffs[0..2078]       ; loader0:u0|altera_serial_flash_loader:serial_flash_loader_0|altserial_flash_loader:altserial_flash_loader_component|alt_sfl_enhanced:\ENHANCED_PGM:sfl_inst_enhanced|lpm_shiftreg:data_reg|dffs_rtl_0       ; SHIFT_TAPS ;
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                                                                                                                               ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                                                                                                                     ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; 4:1                ; 15 bits   ; 30 LEs        ; 30 LEs               ; 0 LEs                  ; Yes        ; |serial_loader|loader0:u0|altera_serial_flash_loader:serial_flash_loader_0|altserial_flash_loader:altserial_flash_loader_component|alt_sfl_enhanced:\ENHANCED_PGM:sfl_inst_enhanced|crc_reg[0] ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Source assignments for loader0:u0|altera_serial_flash_loader:serial_flash_loader_0|altserial_flash_loader:altserial_flash_loader_component|alt_sfl_enhanced:\ENHANCED_PGM:sfl_inst_enhanced|lpm_shiftreg:crc_shifter|altshift_taps:dffs_rtl_0|shift_taps_jpq:auto_generated|altsyncram_mbb1:altsyncram2 ;
++---------------------------------+--------------------+------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                                                                                                                                                                                                                        ;
++---------------------------------+--------------------+------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                                                                                                                                                                                                         ;
++---------------------------------+--------------------+------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Source assignments for loader0:u0|altera_serial_flash_loader:serial_flash_loader_0|altserial_flash_loader:altserial_flash_loader_component|alt_sfl_enhanced:\ENHANCED_PGM:sfl_inst_enhanced|lpm_shiftreg:data_speed_reg|altshift_taps:dffs_rtl_0|shift_taps_9pq:auto_generated|altsyncram_0bb1:altsyncram2 ;
++---------------------------------+--------------------+------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                                                                                                                                                                                                                           ;
++---------------------------------+--------------------+------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                                                                                                                                                                                                            ;
++---------------------------------+--------------------+------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Source assignments for loader0:u0|altera_serial_flash_loader:serial_flash_loader_0|altserial_flash_loader:altserial_flash_loader_component|alt_sfl_enhanced:\ENHANCED_PGM:sfl_inst_enhanced|lpm_shiftreg:data_reg|altshift_taps:dffs_rtl_0|shift_taps_hpq:auto_generated|altsyncram_gbb1:altsyncram2 ;
++---------------------------------+--------------------+------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                                                                                                                                                                                                                     ;
++---------------------------------+--------------------+------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                                                                                                                                                                                                      ;
++---------------------------------+--------------------+------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: loader0:u0|altera_serial_flash_loader:serial_flash_loader_0 ;
++-------------------------+--------------+-----------------------------------------------------------------+
+; Parameter Name          ; Value        ; Type                                                            ;
++-------------------------+--------------+-----------------------------------------------------------------+
+; ENABLE_QUAD_SPI_SUPPORT ; 0            ; Signed Integer                                                  ;
+; ENABLE_SHARED_ACCESS    ; OFF          ; String                                                          ;
+; ENHANCED_MODE           ; 1            ; Signed Integer                                                  ;
+; INTENDED_DEVICE_FAMILY  ; Cyclone IV E ; String                                                          ;
+; NCSO_WIDTH              ; 1            ; Signed Integer                                                  ;
++-------------------------+--------------+-----------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: loader0:u0|altera_serial_flash_loader:serial_flash_loader_0|altserial_flash_loader:altserial_flash_loader_component ;
++-------------------------+------------------------+---------------------------------------------------------------------------------------------------------------+
+; Parameter Name          ; Value                  ; Type                                                                                                          ;
++-------------------------+------------------------+---------------------------------------------------------------------------------------------------------------+
+; intended_device_family  ; Cyclone IV E           ; String                                                                                                        ;
+; enable_shared_access    ; OFF                    ; String                                                                                                        ;
+; enhanced_mode           ; 1                      ; Signed Integer                                                                                                ;
+; enable_quad_spi_support ; 0                      ; Signed Integer                                                                                                ;
+; ncso_width              ; 1                      ; Signed Integer                                                                                                ;
+; lpm_type                ; ALTSERIAL_FLASH_LOADER ; String                                                                                                        ;
++-------------------------+------------------------+---------------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: loader0:u0|altera_serial_flash_loader:serial_flash_loader_0|altserial_flash_loader:altserial_flash_loader_component|alt_sfl_enhanced:\ENHANCED_PGM:sfl_inst_enhanced|lpm_shiftreg:crc_shifter|altshift_taps:dffs_rtl_0 ;
++----------------+----------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value          ; Type                                                                                                                                                                                                                                  ;
++----------------+----------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; WIDTH_BYTEENA  ; 1              ; Untyped                                                                                                                                                                                                                               ;
+; NUMBER_OF_TAPS ; 1              ; Untyped                                                                                                                                                                                                                               ;
+; TAP_DISTANCE   ; 8192           ; Untyped                                                                                                                                                                                                                               ;
+; WIDTH          ; 1              ; Untyped                                                                                                                                                                                                                               ;
+; POWER_UP_STATE ; CLEARED        ; Untyped                                                                                                                                                                                                                               ;
+; CBXI_PARAMETER ; shift_taps_jpq ; Untyped                                                                                                                                                                                                                               ;
++----------------+----------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: loader0:u0|altera_serial_flash_loader:serial_flash_loader_0|altserial_flash_loader:altserial_flash_loader_component|alt_sfl_enhanced:\ENHANCED_PGM:sfl_inst_enhanced|lpm_shiftreg:data_speed_reg|altshift_taps:dffs_rtl_0 ;
++----------------+----------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value          ; Type                                                                                                                                                                                                                                     ;
++----------------+----------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; WIDTH_BYTEENA  ; 1              ; Untyped                                                                                                                                                                                                                                  ;
+; NUMBER_OF_TAPS ; 1              ; Untyped                                                                                                                                                                                                                                  ;
+; TAP_DISTANCE   ; 2107           ; Untyped                                                                                                                                                                                                                                  ;
+; WIDTH          ; 1              ; Untyped                                                                                                                                                                                                                                  ;
+; POWER_UP_STATE ; CLEARED        ; Untyped                                                                                                                                                                                                                                  ;
+; CBXI_PARAMETER ; shift_taps_9pq ; Untyped                                                                                                                                                                                                                                  ;
++----------------+----------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: loader0:u0|altera_serial_flash_loader:serial_flash_loader_0|altserial_flash_loader:altserial_flash_loader_component|alt_sfl_enhanced:\ENHANCED_PGM:sfl_inst_enhanced|lpm_shiftreg:data_reg|altshift_taps:dffs_rtl_0 ;
++----------------+----------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value          ; Type                                                                                                                                                                                                                               ;
++----------------+----------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; WIDTH_BYTEENA  ; 1              ; Untyped                                                                                                                                                                                                                            ;
+; NUMBER_OF_TAPS ; 1              ; Untyped                                                                                                                                                                                                                            ;
+; TAP_DISTANCE   ; 2079           ; Untyped                                                                                                                                                                                                                            ;
+; WIDTH          ; 1              ; Untyped                                                                                                                                                                                                                            ;
+; POWER_UP_STATE ; CLEARED        ; Untyped                                                                                                                                                                                                                            ;
+; CBXI_PARAMETER ; shift_taps_hpq ; Untyped                                                                                                                                                                                                                            ;
++----------------+----------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; altshift_taps Parameter Settings by Entity Instance                                                                                                                                                                                                    ;
++----------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Name                       ; Value                                                                                                                                                                                                                     ;
++----------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Number of entity instances ; 3                                                                                                                                                                                                                         ;
+; Entity Instance            ; loader0:u0|altera_serial_flash_loader:serial_flash_loader_0|altserial_flash_loader:altserial_flash_loader_component|alt_sfl_enhanced:\ENHANCED_PGM:sfl_inst_enhanced|lpm_shiftreg:crc_shifter|altshift_taps:dffs_rtl_0    ;
+;     -- NUMBER_OF_TAPS      ; 1                                                                                                                                                                                                                         ;
+;     -- TAP_DISTANCE        ; 8192                                                                                                                                                                                                                      ;
+;     -- WIDTH               ; 1                                                                                                                                                                                                                         ;
+; Entity Instance            ; loader0:u0|altera_serial_flash_loader:serial_flash_loader_0|altserial_flash_loader:altserial_flash_loader_component|alt_sfl_enhanced:\ENHANCED_PGM:sfl_inst_enhanced|lpm_shiftreg:data_speed_reg|altshift_taps:dffs_rtl_0 ;
+;     -- NUMBER_OF_TAPS      ; 1                                                                                                                                                                                                                         ;
+;     -- TAP_DISTANCE        ; 2107                                                                                                                                                                                                                      ;
+;     -- WIDTH               ; 1                                                                                                                                                                                                                         ;
+; Entity Instance            ; loader0:u0|altera_serial_flash_loader:serial_flash_loader_0|altserial_flash_loader:altserial_flash_loader_component|alt_sfl_enhanced:\ENHANCED_PGM:sfl_inst_enhanced|lpm_shiftreg:data_reg|altshift_taps:dffs_rtl_0       ;
+;     -- NUMBER_OF_TAPS      ; 1                                                                                                                                                                                                                         ;
+;     -- TAP_DISTANCE        ; 2079                                                                                                                                                                                                                      ;
+;     -- WIDTH               ; 1                                                                                                                                                                                                                         ;
++----------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "loader0:u0|altera_serial_flash_loader:serial_flash_loader_0"                                                                                                ;
++---------------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; Port                ; Type   ; Severity ; Details                                                                                                                                      ;
++---------------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; asmi_access_granted ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; asdo_in             ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; data_in             ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; data_oe             ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; dclk_in             ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; ncso_in             ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; asmi_access_request ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                     ;
+; data0_out           ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                     ;
+; data_out            ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                     ;
++---------------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "loader0:u0"                                                                                                                                                                             ;
++------------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port       ; Type  ; Severity ; Details                                                                                                                                                                            ;
++------------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; noe_in     ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; noe_in[-1] ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
++------------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 36                          ;
+; cycloneiii_ff         ; 296                         ;
+;     ENA               ; 74                          ;
+;     ENA CLR           ; 214                         ;
+;     plain             ; 8                           ;
+; cycloneiii_io_obuf    ; 3                           ;
+; cycloneiii_lcell_comb ; 299                         ;
+;     arith             ; 85                          ;
+;         1 data inputs ; 1                           ;
+;         2 data inputs ; 84                          ;
+;     normal            ; 214                         ;
+;         0 data inputs ; 8                           ;
+;         1 data inputs ; 1                           ;
+;         2 data inputs ; 24                          ;
+;         3 data inputs ; 59                          ;
+;         4 data inputs ; 122                         ;
+; cycloneiii_ram_block  ; 3                           ;
+;                       ;                             ;
+; Max LUT depth         ; 8.00                        ;
+; Average LUT depth     ; 3.01                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:06     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Analysis & Synthesis
+    Info: Version 15.0.0 Build 145 04/22/2015 Patches 0.01we SJ Web Edition
+    Info: Processing started: Fri Apr 21 21:42:12 2017
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off serial_loader -c serial_loader
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file loader0/synthesis/loader0.v
+    Info (12023): Found entity 1: loader0
+Info (12021): Found 1 design units, including 1 entities, in source file loader0/synthesis/submodules/altera_serial_flash_loader.v
+    Info (12023): Found entity 1: altera_serial_flash_loader
+Info (12021): Found 1 design units, including 1 entities, in source file serial_loader.sv
+    Info (12023): Found entity 1: serial_loader
+Info (12127): Elaborating entity "serial_loader" for the top level hierarchy
+Info (12128): Elaborating entity "loader0" for hierarchy "loader0:u0"
+Info (12128): Elaborating entity "altera_serial_flash_loader" for hierarchy "loader0:u0|altera_serial_flash_loader:serial_flash_loader_0"
+Info (12128): Elaborating entity "altserial_flash_loader" for hierarchy "loader0:u0|altera_serial_flash_loader:serial_flash_loader_0|altserial_flash_loader:altserial_flash_loader_component"
+Info (12130): Elaborated megafunction instantiation "loader0:u0|altera_serial_flash_loader:serial_flash_loader_0|altserial_flash_loader:altserial_flash_loader_component"
+Info (12133): Instantiated megafunction "loader0:u0|altera_serial_flash_loader:serial_flash_loader_0|altserial_flash_loader:altserial_flash_loader_component" with the following parameter:
+    Info (12134): Parameter "enable_quad_spi_support" = "0"
+    Info (12134): Parameter "enable_shared_access" = "OFF"
+    Info (12134): Parameter "enhanced_mode" = "1"
+    Info (12134): Parameter "intended_device_family" = "Cyclone IV E"
+    Info (12134): Parameter "ncso_width" = "1"
+Info (12128): Elaborating entity "alt_sfl_enhanced" for hierarchy "loader0:u0|altera_serial_flash_loader:serial_flash_loader_0|altserial_flash_loader:altserial_flash_loader_component|alt_sfl_enhanced:\ENHANCED_PGM:sfl_inst_enhanced"
+Info (12131): Elaborated megafunction instantiation "loader0:u0|altera_serial_flash_loader:serial_flash_loader_0|altserial_flash_loader:altserial_flash_loader_component|alt_sfl_enhanced:\ENHANCED_PGM:sfl_inst_enhanced", which is child of megafunction instantiation "loader0:u0|altera_serial_flash_loader:serial_flash_loader_0|altserial_flash_loader:altserial_flash_loader_component"
+Info (12128): Elaborating entity "lpm_shiftreg" for hierarchy "loader0:u0|altera_serial_flash_loader:serial_flash_loader_0|altserial_flash_loader:altserial_flash_loader_component|alt_sfl_enhanced:\ENHANCED_PGM:sfl_inst_enhanced|lpm_shiftreg:opcode_reg"
+Info (12128): Elaborating entity "lpm_shiftreg" for hierarchy "loader0:u0|altera_serial_flash_loader:serial_flash_loader_0|altserial_flash_loader:altserial_flash_loader_component|alt_sfl_enhanced:\ENHANCED_PGM:sfl_inst_enhanced|lpm_shiftreg:rstatus_reg"
+Info (12128): Elaborating entity "lpm_shiftreg" for hierarchy "loader0:u0|altera_serial_flash_loader:serial_flash_loader_0|altserial_flash_loader:altserial_flash_loader_component|alt_sfl_enhanced:\ENHANCED_PGM:sfl_inst_enhanced|lpm_shiftreg:rsiid_reg"
+Info (12128): Elaborating entity "lpm_shiftreg" for hierarchy "loader0:u0|altera_serial_flash_loader:serial_flash_loader_0|altserial_flash_loader:altserial_flash_loader_component|alt_sfl_enhanced:\ENHANCED_PGM:sfl_inst_enhanced|lpm_shiftreg:rdi_reg"
+Info (12128): Elaborating entity "lpm_shiftreg" for hierarchy "loader0:u0|altera_serial_flash_loader:serial_flash_loader_0|altserial_flash_loader:altserial_flash_loader_component|alt_sfl_enhanced:\ENHANCED_PGM:sfl_inst_enhanced|lpm_shiftreg:aai_write_reg"
+Info (12128): Elaborating entity "lpm_shiftreg" for hierarchy "loader0:u0|altera_serial_flash_loader:serial_flash_loader_0|altserial_flash_loader:altserial_flash_loader_component|alt_sfl_enhanced:\ENHANCED_PGM:sfl_inst_enhanced|lpm_shiftreg:aai_data_reg"
+Info (12128): Elaborating entity "lpm_shiftreg" for hierarchy "loader0:u0|altera_serial_flash_loader:serial_flash_loader_0|altserial_flash_loader:altserial_flash_loader_component|alt_sfl_enhanced:\ENHANCED_PGM:sfl_inst_enhanced|lpm_shiftreg:data_reg"
+Info (12128): Elaborating entity "lpm_shiftreg" for hierarchy "loader0:u0|altera_serial_flash_loader:serial_flash_loader_0|altserial_flash_loader:altserial_flash_loader_component|alt_sfl_enhanced:\ENHANCED_PGM:sfl_inst_enhanced|lpm_shiftreg:data_speed_reg"
+Info (12128): Elaborating entity "lpm_shiftreg" for hierarchy "loader0:u0|altera_serial_flash_loader:serial_flash_loader_0|altserial_flash_loader:altserial_flash_loader_component|alt_sfl_enhanced:\ENHANCED_PGM:sfl_inst_enhanced|lpm_shiftreg:en4b_reg"
+Info (12128): Elaborating entity "lpm_shiftreg" for hierarchy "loader0:u0|altera_serial_flash_loader:serial_flash_loader_0|altserial_flash_loader:altserial_flash_loader_component|alt_sfl_enhanced:\ENHANCED_PGM:sfl_inst_enhanced|lpm_shiftreg:crc_shifter"
+Info (12128): Elaborating entity "lpm_shiftreg" for hierarchy "loader0:u0|altera_serial_flash_loader:serial_flash_loader_0|altserial_flash_loader:altserial_flash_loader_component|alt_sfl_enhanced:\ENHANCED_PGM:sfl_inst_enhanced|lpm_shiftreg:powerful_reg"
+Info (12128): Elaborating entity "lpm_counter" for hierarchy "loader0:u0|altera_serial_flash_loader:serial_flash_loader_0|altserial_flash_loader:altserial_flash_loader_component|alt_sfl_enhanced:\ENHANCED_PGM:sfl_inst_enhanced|lpm_counter:bit_counter"
+Info (12021): Found 1 design units, including 1 entities, in source file db/cntr_mfi.tdf
+    Info (12023): Found entity 1: cntr_mfi
+Info (12128): Elaborating entity "cntr_mfi" for hierarchy "loader0:u0|altera_serial_flash_loader:serial_flash_loader_0|altserial_flash_loader:altserial_flash_loader_component|alt_sfl_enhanced:\ENHANCED_PGM:sfl_inst_enhanced|lpm_counter:bit_counter|cntr_mfi:auto_generated"
+Info (11170): Start IP generation for the debug fabric within sld_hub.
+Info (11172): 2017.04.21.21:42:33 Progress: Loading sldf29756ea/alt_sld_fab_wrapper_hw.tcl
+Info (11172): Alt_sld_fab.alt_sld_fab: SLD fabric agents which did not specify prefer_host were connected to JTAG
+Info (11172): Alt_sld_fab: Generating alt_sld_fab "alt_sld_fab" for QUARTUS_SYNTH
+Info (11172): Alt_sld_fab: "alt_sld_fab" instantiated alt_sld_fab "alt_sld_fab"
+Info (11172): Presplit: "alt_sld_fab" instantiated altera_super_splitter "presplit"
+Info (11172): Splitter: "alt_sld_fab" instantiated altera_sld_splitter "splitter"
+Info (11172): Sldfabric: "alt_sld_fab" instantiated altera_sld_jtag_hub "sldfabric"
+Info (11172): Ident: "alt_sld_fab" instantiated altera_connection_identification_hub "ident"
+Info (11172): Alt_sld_fab: Done "alt_sld_fab" with 6 modules, 6 files
+Info (11171): Finished IP generation for the debug fabric within sld_hub.
+Info (12021): Found 1 design units, including 1 entities, in source file db/ip/sldf29756ea/alt_sld_fab.v
+    Info (12023): Found entity 1: alt_sld_fab
+Info (12021): Found 1 design units, including 1 entities, in source file db/ip/sldf29756ea/submodules/alt_sld_fab_alt_sld_fab.v
+    Info (12023): Found entity 1: alt_sld_fab_alt_sld_fab
+Info (12021): Found 1 design units, including 1 entities, in source file db/ip/sldf29756ea/submodules/alt_sld_fab_alt_sld_fab_ident.sv
+    Info (12023): Found entity 1: alt_sld_fab_alt_sld_fab_ident
+Info (12021): Found 1 design units, including 1 entities, in source file db/ip/sldf29756ea/submodules/alt_sld_fab_alt_sld_fab_presplit.sv
+    Info (12023): Found entity 1: alt_sld_fab_alt_sld_fab_presplit
+Info (12021): Found 2 design units, including 1 entities, in source file db/ip/sldf29756ea/submodules/alt_sld_fab_alt_sld_fab_sldfabric.vhd
+    Info (12022): Found design unit 1: alt_sld_fab_alt_sld_fab_sldfabric-rtl
+    Info (12023): Found entity 1: alt_sld_fab_alt_sld_fab_sldfabric
+Info (12021): Found 1 design units, including 1 entities, in source file db/ip/sldf29756ea/submodules/alt_sld_fab_alt_sld_fab_splitter.sv
+    Info (12023): Found entity 1: alt_sld_fab_alt_sld_fab_splitter
+Info (19000): Inferred 3 megafunctions from design logic
+    Info (276034): Inferred altshift_taps megafunction from the following design logic: "loader0:u0|altera_serial_flash_loader:serial_flash_loader_0|altserial_flash_loader:altserial_flash_loader_component|alt_sfl_enhanced:\ENHANCED_PGM:sfl_inst_enhanced|lpm_shiftreg:crc_shifter|dffs_rtl_0"
+        Info (286033): Parameter NUMBER_OF_TAPS set to 1
+        Info (286033): Parameter TAP_DISTANCE set to 8192
+        Info (286033): Parameter WIDTH set to 1
+    Info (276034): Inferred altshift_taps megafunction from the following design logic: "loader0:u0|altera_serial_flash_loader:serial_flash_loader_0|altserial_flash_loader:altserial_flash_loader_component|alt_sfl_enhanced:\ENHANCED_PGM:sfl_inst_enhanced|lpm_shiftreg:data_speed_reg|dffs_rtl_0"
+        Info (286033): Parameter NUMBER_OF_TAPS set to 1
+        Info (286033): Parameter TAP_DISTANCE set to 2107
+        Info (286033): Parameter WIDTH set to 1
+    Info (276034): Inferred altshift_taps megafunction from the following design logic: "loader0:u0|altera_serial_flash_loader:serial_flash_loader_0|altserial_flash_loader:altserial_flash_loader_component|alt_sfl_enhanced:\ENHANCED_PGM:sfl_inst_enhanced|lpm_shiftreg:data_reg|dffs_rtl_0"
+        Info (286033): Parameter NUMBER_OF_TAPS set to 1
+        Info (286033): Parameter TAP_DISTANCE set to 2079
+        Info (286033): Parameter WIDTH set to 1
+Info (12130): Elaborated megafunction instantiation "loader0:u0|altera_serial_flash_loader:serial_flash_loader_0|altserial_flash_loader:altserial_flash_loader_component|alt_sfl_enhanced:\ENHANCED_PGM:sfl_inst_enhanced|lpm_shiftreg:crc_shifter|altshift_taps:dffs_rtl_0"
+Info (12133): Instantiated megafunction "loader0:u0|altera_serial_flash_loader:serial_flash_loader_0|altserial_flash_loader:altserial_flash_loader_component|alt_sfl_enhanced:\ENHANCED_PGM:sfl_inst_enhanced|lpm_shiftreg:crc_shifter|altshift_taps:dffs_rtl_0" with the following parameter:
+    Info (12134): Parameter "NUMBER_OF_TAPS" = "1"
+    Info (12134): Parameter "TAP_DISTANCE" = "8192"
+    Info (12134): Parameter "WIDTH" = "1"
+Info (12021): Found 1 design units, including 1 entities, in source file db/shift_taps_jpq.tdf
+    Info (12023): Found entity 1: shift_taps_jpq
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_mbb1.tdf
+    Info (12023): Found entity 1: altsyncram_mbb1
+Info (12021): Found 1 design units, including 1 entities, in source file db/cntr_nvf.tdf
+    Info (12023): Found entity 1: cntr_nvf
+Info (12021): Found 1 design units, including 1 entities, in source file db/cmpr_aic.tdf
+    Info (12023): Found entity 1: cmpr_aic
+Info (12021): Found 1 design units, including 1 entities, in source file db/cntr_dfh.tdf
+    Info (12023): Found entity 1: cntr_dfh
+Info (12130): Elaborated megafunction instantiation "loader0:u0|altera_serial_flash_loader:serial_flash_loader_0|altserial_flash_loader:altserial_flash_loader_component|alt_sfl_enhanced:\ENHANCED_PGM:sfl_inst_enhanced|lpm_shiftreg:data_speed_reg|altshift_taps:dffs_rtl_0"
+Info (12133): Instantiated megafunction "loader0:u0|altera_serial_flash_loader:serial_flash_loader_0|altserial_flash_loader:altserial_flash_loader_component|alt_sfl_enhanced:\ENHANCED_PGM:sfl_inst_enhanced|lpm_shiftreg:data_speed_reg|altshift_taps:dffs_rtl_0" with the following parameter:
+    Info (12134): Parameter "NUMBER_OF_TAPS" = "1"
+    Info (12134): Parameter "TAP_DISTANCE" = "2107"
+    Info (12134): Parameter "WIDTH" = "1"
+Info (12021): Found 1 design units, including 1 entities, in source file db/shift_taps_9pq.tdf
+    Info (12023): Found entity 1: shift_taps_9pq
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_0bb1.tdf
+    Info (12023): Found entity 1: altsyncram_0bb1
+Info (12021): Found 1 design units, including 1 entities, in source file db/cntr_cvf.tdf
+    Info (12023): Found entity 1: cntr_cvf
+Info (12021): Found 1 design units, including 1 entities, in source file db/cmpr_9ic.tdf
+    Info (12023): Found entity 1: cmpr_9ic
+Info (12021): Found 1 design units, including 1 entities, in source file db/cntr_2fh.tdf
+    Info (12023): Found entity 1: cntr_2fh
+Info (12130): Elaborated megafunction instantiation "loader0:u0|altera_serial_flash_loader:serial_flash_loader_0|altserial_flash_loader:altserial_flash_loader_component|alt_sfl_enhanced:\ENHANCED_PGM:sfl_inst_enhanced|lpm_shiftreg:data_reg|altshift_taps:dffs_rtl_0"
+Info (12133): Instantiated megafunction "loader0:u0|altera_serial_flash_loader:serial_flash_loader_0|altserial_flash_loader:altserial_flash_loader_component|alt_sfl_enhanced:\ENHANCED_PGM:sfl_inst_enhanced|lpm_shiftreg:data_reg|altshift_taps:dffs_rtl_0" with the following parameter:
+    Info (12134): Parameter "NUMBER_OF_TAPS" = "1"
+    Info (12134): Parameter "TAP_DISTANCE" = "2079"
+    Info (12134): Parameter "WIDTH" = "1"
+Info (12021): Found 1 design units, including 1 entities, in source file db/shift_taps_hpq.tdf
+    Info (12023): Found entity 1: shift_taps_hpq
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_gbb1.tdf
+    Info (12023): Found entity 1: altsyncram_gbb1
+Info (12021): Found 1 design units, including 1 entities, in source file db/cntr_kvf.tdf
+    Info (12023): Found entity 1: cntr_kvf
+Info (12021): Found 1 design units, including 1 entities, in source file db/cntr_afh.tdf
+    Info (12023): Found entity 1: cntr_afh
+Warning (12241): 2 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Info (17010): WYSIWYG ASMI primitives converted to equivalent logic
+    Info (17011): WYSIWYG SPI primitive "loader0:u0|altera_serial_flash_loader:serial_flash_loader_0|altserial_flash_loader:altserial_flash_loader_component|data_from_flash" converted to equivalent logic
+Info (13000): Registers with preset signals will power-up high
+Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
+Info (286031): Timing-Driven Synthesis is running on partition "Top"
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 656 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 4 input pins
+    Info (21059): Implemented 4 output pins
+    Info (21061): Implemented 644 logic cells
+    Info (21064): Implemented 3 RAM segments
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 1 warning
+    Info: Peak virtual memory: 811 megabytes
+    Info: Processing ended: Fri Apr 21 21:42:46 2017
+    Info: Elapsed time: 00:00:34
+    Info: Total CPU time (on all processors): 00:00:57
+
+

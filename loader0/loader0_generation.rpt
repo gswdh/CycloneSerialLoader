@@ -1,0 +1,29 @@
+Info: Starting: Create block symbol file (.bsf)
+Info: qsys-generate C:\Users\George\Desktop\SerialLoader\loader0.qsys --block-symbol-file --output-directory=C:\Users\George\Desktop\SerialLoader\loader0 --family="Cyclone IV E" --part=EP4CE6E22C6
+Progress: Loading SerialLoader/loader0.qsys
+Progress: Reading input file
+Progress: Adding serial_flash_loader_0 [altera_serial_flash_loader 15.0]
+Progress: Parameterizing module serial_flash_loader_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: ip-generate succeeded.
+Info: Finished: Create block symbol file (.bsf)
+Info: 
+Info: Starting: Create HDL design files for synthesis
+Info: qsys-generate C:\Users\George\Desktop\SerialLoader\loader0.qsys --synthesis=VERILOG --output-directory=C:\Users\George\Desktop\SerialLoader\loader0\synthesis --family="Cyclone IV E" --part=EP4CE6E22C6
+Progress: Loading SerialLoader/loader0.qsys
+Progress: Reading input file
+Progress: Adding serial_flash_loader_0 [altera_serial_flash_loader 15.0]
+Progress: Parameterizing module serial_flash_loader_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: loader0: Generating loader0 "loader0" for QUARTUS_SYNTH
+Info: serial_flash_loader_0: generating top-level entity altera_serial_flash_loader
+Info: serial_flash_loader_0: "loader0" instantiated altera_serial_flash_loader "serial_flash_loader_0"
+Info: loader0: Done "loader0" with 2 modules, 2 files
+Info: ip-generate succeeded.
+Info: Finished: Create HDL design files for synthesis
